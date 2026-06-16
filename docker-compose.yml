@@ -1,0 +1,12 @@
+services:
+  platform-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: platform-ci-runner
+
+    env_file:
+      - .env
+
+    restart: unless-stopped
