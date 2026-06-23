@@ -16,11 +16,13 @@ RUNNER_VERSION="2.317.0"
 cd /home/runner
 
 echo "Downloading GitHub Actions runner..."
-curl -o actions-runner-linux-x64.tar.gz -L \
-  "https://github.com/actions/runner/releases/download/v${RUNNER_VERSION}/actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz"
 
-tar xzf actions-runner-linux-x64.tar.gz
-rm actions-runner-linux-x64.tar.gz
+curl -o actions-runner-linux-arm64.tar.gz -L \
+"https://github.com/actions/runner/releases/download/v${RUNNER_VERSION}/actions-runner-linux-arm64-${RUNNER_VERSION}.tar.gz"
+
+tar xzf actions-runner-linux-arm64.tar.gz
+
+rm actions-runner-linux-arm64.tar.gz
 
 echo "Configuring runner..."
 ./config.sh \

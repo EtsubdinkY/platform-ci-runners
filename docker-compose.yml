@@ -9,4 +9,6 @@ services:
     env_file:
       - .env
 
+    user: "runner"
+
     restart: unless-stopped
