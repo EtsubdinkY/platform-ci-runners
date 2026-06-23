@@ -32,6 +32,11 @@ RUN curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | b
 # GitHub Runner User
 RUN useradd -m runner
 
+# DevSecOps Tools
+RUN pip3 install checkov
+
+RUN curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh
+
 WORKDIR /home/runner
 
 COPY start.sh /start.sh
