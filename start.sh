@@ -55,9 +55,8 @@ echo "Configuring runner..."
 
 cleanup() {
   echo "Removing runner registration..."
-  ./config.sh remove --unattended --token "$RUNNER_TOKEN"
+  ./config.sh remove --token "$RUNNER_TOKEN" || true
 }
-
 trap cleanup EXIT
 
 echo "Starting runner..."
