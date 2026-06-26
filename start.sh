@@ -51,7 +51,8 @@ echo "Configuring runner..."
   --labels "${RUNNER_LABELS:-self-hosted,platform-runner}" \
   --runnergroup "${RUNNER_GROUP:-Default}" \
   --unattended \
-  --replace
+  --replace \
+  --ephemeral
 
 cleanup() {
   echo "Removing runner registration..."
